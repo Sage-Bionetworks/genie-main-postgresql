@@ -8,14 +8,14 @@ git clone git@github.com:Sage-Bionetworks/genie-main-postgresql.git
 cd genie-main-postgresql
 ```
 
-1. Install all required R packages:
+2. Install all required R packages:
 ```
 R -e 'renv::restore()'
 ```
 
-1. Install PostgreSQL via pgAdmin (see https://www.pgadmin.org/)
-1. Open the the pgAdmin tool and create a database called `genie`.
-1. Cache your password for the postgres user in `~/.pgpass` (see https://www.postgresql.org/docs/current/libpq-pgpass.html)
+3. Install PostgreSQL via pgAdmin (see https://www.pgadmin.org/)
+4. Open the the pgAdmin tool and create a database called `genie`.
+5. Cache your password for the postgres user in `~/.pgpass` (see https://www.postgresql.org/docs/current/libpq-pgpass.html)
 
 ## Synapse credentials
 
