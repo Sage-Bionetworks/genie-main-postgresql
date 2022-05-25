@@ -63,7 +63,7 @@ cd ~/data/genie_release_11
 synapse get -r syn26706564
 
 # create individual release schemas
-Rscript create_cb_genie_raw.R 
+Rscript create_db_genie_raw.R 
 
 # aggregtate individual release schemas into a single schema
 Rscript aggregate_public_genie.R
