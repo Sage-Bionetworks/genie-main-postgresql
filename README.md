@@ -38,3 +38,49 @@ authtoken = {your_personal_access_token_here}
 The workflow and scripts are provided as a reference only.  The workflow has 
 not been tested.
 
+```
+sh genie-main-postgresql.sh
+```
+
+## Notes on primary and foreign keys
+
+Primary and foreign keys are mapped below.  They are not automatically specified in the table building.
+
+patient
+PRIMARY KEY(patient_id, release)
+
+sample
+PRIMARY KEY(sample_id, release)
+CONSTRAINT fk_patient
+	FOREIGN KEY(patient_id, release)
+		REFERENCES patient(patient_id, release)
+
+mutation
+PRIMARY KEY(chromosome, start_position, end_position, reference_allele, tumor_seq_allele1, tumor_sample_barcode, release)
+CONSTRAINT fk_sample
+	FOREIGN KEY(tumor_sample_barcode, release)
+		REFERENCES sample(sample_id, release)
+
+
+genomic_information
+PRIMARY KEY(chromosome, start_position, end_position, seq_assay_id, release)
+CONSTRAINT fk_assay
+	FOREIGN KEY(seq_assay_id, release)
+		REFERENES assay_information(seq_assay_id, release)
+
+
+fusion
+PRIMARY KEY(hugo_symbol, tumor_sample_barcode, release)
+CONSTRAINT fk_sample
+	FOREIGN KEY(tumor_sample_barcode, release)
+		REFERENCES sample(sample_id, release)
+
+cna
+PRIMARY KEY(id, chrom, loc_start, loc_end, release)
+CONSTRAINT fk_sample
+	FOREIGN KEY(id, release)
+		REFERENCES sample(sample_id, release)
+
+assay_information
+PRIMARY_KEY(seq_assay_id)
+
