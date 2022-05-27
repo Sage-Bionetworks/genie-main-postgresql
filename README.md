@@ -1,5 +1,17 @@
 # Main GENIE PostgreSQL Database
 
+## Overview
+The following set of scripts provide an approximate guide for creating a local
+PostgreSQL database for the main GENIE public releases.  These scripts have 
+not been thoroughly tested and should be used as an approximate reference only.
+
+The `create_db_genie_raw.R` script creates an individual schema for each release
+and the `aggregate_public_genie.R` script aggregates all releases into a single 
+schema, adding an additional column labeled `release` to each table to mark the 
+release provenance of each row of data.  
+
+See `genie-main-postgresql.sh` for an outline of all steps.  
+
 ## Installation
 
 1. Clone this repository and navigate to the directory:
@@ -35,8 +47,8 @@ authtoken = {your_personal_access_token_here}
 
 ## Usage
 
-The workflow and scripts are provided as a reference only.  The workflow has 
-not been tested.
+These scripts are provided as a reference only.  The full workflow has 
+not been thoroughly tested but in an ideal world:
 
 ```
 sh genie-main-postgresql.sh
