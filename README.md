@@ -44,7 +44,8 @@ sh genie-main-postgresql.sh
 
 ## Notes on primary and foreign keys
 
-Primary and foreign keys are mapped below.  They are not automatically specified in the table building.
+Primary and foreign keys are mapped below.  They are not automatically specified 
+when tables are constructed due to duplicated primary keys in the raw data.
 
 patient
 PRIMARY KEY(patient_id, release)
@@ -82,5 +83,5 @@ CONSTRAINT fk_sample
 		REFERENCES sample(sample_id, release)
 
 assay_information
-PRIMARY_KEY(seq_assay_id)
+PRIMARY_KEY(seq_assay_id, release)
 
