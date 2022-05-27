@@ -16,7 +16,7 @@ R -e 'renv::restore()'
 3. Install the synapse command line client (see https://help.synapse.org/docs/Getting-Started-with-Synapse-API-Clients.2098758106.html)
 4. Install PostgreSQL via pgAdmin (see https://www.pgadmin.org/)
 5. Open the the pgAdmin tool and create a database called `genie`.
-6. Cache your password for the postgres user in `~/.pgpass` (see https://www.postgresql.org/docs/current/libpq-pgpass.html)
+6. Cache your password for the `postgres` user in `~/.pgpass` (see https://www.postgresql.org/docs/current/libpq-pgpass.html)
 
 ## Synapse credentials
 
@@ -35,7 +35,6 @@ authtoken = {your_personal_access_token_here}
 
 ## Usage
 
-To run the full workflow:
-```
-sh genie-main-postgresql.sh
-```
+The workflow and scripts are provided as a reference only.  The workflow has 
+not been tested.
+
